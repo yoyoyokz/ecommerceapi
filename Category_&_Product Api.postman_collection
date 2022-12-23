@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "34d0c706-0726-464b-82ec-c8200ab5a056",
+		"name": "Category & Product Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryName\": \"pistache\",\r\n    \"description\": \"elkappo\",\r\n    \"imageUrl\": 2500\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/category/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add category",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"pistache\",\r\n    \"description\": \"elkappo\",\r\n    \"imageUrl\": 2500\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/category/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"create"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 09:55:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"category already exists\",\n    \"timestamp\": \"2022-12-23T09:55:52.223\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get category",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/product/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post product",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jumbo\",\r\n    \"imageUrl\": \"elkappo\",\r\n    \"price\": 2500,\r\n    \"description\": \"aka\",\r\n    \"categoryId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 23 Dec 2022 10:22:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Product has been added\",\n    \"timestamp\": \"2022-12-23T10:22:08.180\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update category",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryName\": \"pistache modifie\",\r\n    \"description\": \"elkappo\",\r\n    \"imageUrl\": 2500\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/category/update?categoryID=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category",
+						"update"
+					],
+					"query": [
+						{
+							"key": "categoryID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"pistache modifier\",\r\n    \"imageURL\": \"https://medium.com/@harittweets/how-to-connect-to-h2-database-during-development-testing-using-spring-boot-44bbb287570\",\r\n    \"price\": 2500.0,\r\n    \"description\": \"aka\",\r\n    \"categoryId\": 1\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/product/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
